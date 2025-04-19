@@ -1,0 +1,793 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #9e0606; /* Fundo vermelho */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Impede o scroll lateral */
+}
+
+/* Cabeçalho */
+header {
+    background: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de transparência */
+    color: #fff;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s ease; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse (hover) no header */
+header:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fundo branco sólido ao passar o mouse */
+}
+
+/* Estilo dos links quando o header está com fundo branco */
+header:hover .nav-links li a {
+    color: #000; /* Cor preta como padrão quando o header está branco */
+}
+
+/* Efeito hover nos links */
+header .nav-links li a:hover {
+    color: #9e0606; /* Muda a cor para vermelho ao passar o mouse */
+}
+
+/* Container para os links e logo */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo alinhada à esquerda */
+.navbar-logo {
+    margin-right: auto;
+}
+
+.navbar-logo img {
+    border-radius: 50%; /* Torna a logo redonda */
+    width: 50px;
+    height: 50px; /* Tamanho da logo */
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    transform: scale(1.5);
+    margin-top: 05px;
+}
+
+/* Links de navegação alinhados à direita */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os itens */
+    margin-left: auto; /* Empurra os links para a direita */
+}
+
+/* Estilo padrão dos links */
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transição suave para mudança de cor dos links */
+}
+
+/* Garante que o conteúdo não fique por baixo do navbar */
+body {
+    padding-top: 80px;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Exibe o menu hamburguer no mobile */
+    .hamburguer-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+
+    .hamburguer-menu span {
+        background-color: #161515;
+        height: 3px;
+        width: 25px;
+        margin: 4px;
+        transition: 0.4s;
+    }
+
+    /* Esconde os links no mobile inicialmente */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: rgba(158, 6, 6, 0.9); /* Fundo vermelho para mobile */
+        width: 100%;
+        text-align: right;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    /* Exibição dos links ao clicar no menu hamburguer */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Corrige a margem e o padding dos links no mobile */
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        color: #fff;
+        padding: 10px 0;
+    }
+
+    /* A logo fica alinhada à esquerda no mobile */
+    .navbar-logo {
+        position: absolute;
+        left: 20px;
+    }
+}
+
+/* Hero Section com fundo vermelho até o topo */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh; /* Ocupa a altura total da tela */
+    padding: 20px 50px;
+    position: relative;
+    background-color: #9e0606; /* Fundo vermelho */
+}
+
+/* Texto à esquerda */
+.hero-content-left {
+    max-width: 50%;
+    color: white;
+}
+
+.hero-content-left h1 {
+    font-size: 4rem;
+}
+
+.hero-content-left p {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    padding-left: 9px; /* Move o parágrafo um pouco à direita */
+}
+
+.hero-content-left a {
+    padding: 15px 30px;
+    background-color: #242322;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-left: 10px; /* Move o botão um pouco à direita */
+}
+
+.hero-content-left a:hover {
+    background-color: #302e2e;
+}
+
+/* Fundo branco com borda arredondada e jogado para a direita */
+.half-circle-background {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 50%; /* Círculo perfeito */
+    position: absolute;
+    right: -150px; /* Mantém o círculo jogado para a direita */
+    top: 30%; /* Ajuste da posição vertical */
+    z-index: 1;
+    transform: scale(3.2) translateX(30px); /* Aumenta o círculo e move um pouco para a esquerda */
+}
+
+/* Imagem do pastel */
+.pastel-image {
+    position: absolute;
+    right: 0;
+    top: 35%;
+    width: 300px; /* Mantém o valor base de referência */
+    height: auto;
+    z-index: 2;
+    transform: scale(5.5) translateX(-38px); /* Mantém o scale e move 50px para a esquerda */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Remove a imagem do pastel e o círculo em telas menores */
+    .pastel-image, .half-circle-background {
+        display: none; /* Esconde esses elementos em telas pequenas */
+    }
+
+    /* Centraliza o texto em telas menores */
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto; /* Permite que a altura se ajuste automaticamente */
+        padding: 20px;
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .hero-content-left {
+        max-width: 100%;
+    }
+
+    .hero-content-left h1 {
+        font-size: 2.5rem; /* Ajusta o tamanho do texto para telas pequenas */
+    }
+
+    .hero-content-left p {
+        font-size: 1.2rem;
+        padding-left: 0; /* Remove o espaçamento à esquerda em telas menores */
+    }
+
+    .hero-content-left a {
+        padding: 10px 20px;
+        font-size: 1rem; /* Ajusta o botão para telas menores */
+        margin-left: 0; /* Remove o espaçamento lateral em telas menores */
+    }
+}
+
+
+/* Sobre o Restaurante */
+.sobre {
+    padding-top: 0;
+    padding-bottom: 20px;
+    text-align: left;
+    background: #9e0606;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 60vh;
+    margin-top: -50px;
+}
+
+/* Conteúdo da seção */
+.sobre-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 30px;
+    padding-left: 40px;
+    margin-top: -50px;
+}
+
+/* Título */
+.sobre h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    margin-top: -55px;
+}
+
+/* Parágrafos */
+.sobre p {
+    font-size: 1.1rem;
+    color: #faf5f5;
+    max-width: 800px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+/* Estilos da Imagem */
+.imagem-sobre {
+    flex: 0 0 300px;
+    width: 300px;
+    height: 300px;
+    background-color: #333;
+    border-radius: 50%;
+    transform: scale(1.5) translateX(-65px);
+    position: relative;
+    overflow: hidden;
+    margin-top: -30px;
+    right: 60px;
+}
+
+.foto-diego {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    border-radius: 50%;
+}
+
+/* Responsividade - Telas médias (tablets) */
+@media (max-width: 1024px) {
+    .sobre {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .sobre-conteudo {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 90%;
+    }
+
+    .imagem-sobre {
+        display: none; /* Oculta a imagem em telas médias */
+    }
+
+    .sobre h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        text-align: center; /* Mantém o texto centralizado */
+        transform: translateX(-20px); /* Move o título 20px para a esquerda */
+    }
+
+    .sobre p {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+        line-height: 1.8; /* Melhora o espaçamento entre linhas */
+    }
+}
+
+/* Responsividade - Telas pequenas (smartphones) */
+@media (max-width: 768px) {
+    .sobre {
+        padding: 20px;
+    }
+
+    .sobre-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .imagem-sobre {
+        display: none; /* Oculta a imagem em smartphones */
+    }
+
+    .sobre h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        text-align: center;
+        transform: translateX(-20px); /* Move o título 15px para a esquerda */
+    }
+
+    .sobre p {
+        font-size: 1.3rem; /* Fonte ainda maior para smartphones */
+        line-height: 1.8; /* Mantém espaçamento confortável */
+        max-width: 90%;
+    }
+}
+
+/* Responsividade - Telas muito pequenas (smartphones menores) */
+@media (max-width: 412px) {
+    .sobre h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        text-align: center;
+        transform: translateX(-27px); /* Move o título 10px para a esquerda */
+    }
+
+    .imagem-sobre {
+        display: none; /* Oculta a imagem em telas muito pequenas */
+    }
+
+    .sobre p {
+        font-size: 1.1rem; /* Fonte levemente maior */
+        line-height: 1.8; /* Espaçamento ajustado */
+        max-width: 90%;
+    }
+}
+
+/* Menu */
+.menu {
+    padding: 50px;
+    background: #9e0606;
+    text-align: center;
+}
+
+.menu h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para o texto dentro dos cards */
+.menu-card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* Cor do texto */
+    font-family: 'Archivo Black', sans-serif; /* Aplica a nova fonte */
+    font-size: 1.8rem; /* Aumenta o tamanho do texto para maior visibilidade */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Mantém a sombra do texto */
+}
+
+.menu-card:nth-child(1) {
+    background-image: url('../images/cardapio.png'); /* Imagem para o Cardápio Geral */
+}
+
+.menu-card:nth-child(2) {
+    background-image: url('../images/drinks.png'); /* Imagem para Drinks */
+}
+
+.menu-card:nth-child(3) {
+    background-image: url('../images/sobremesas.png'); /* Imagem para Sobremesas */
+}
+
+.menu-card a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+/* Galeria */
+/* Estilos gerais para a galeria */
+.galeria {
+    background-color: #9e0606;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.galeria h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 3.5rem;
+}
+
+/* Estilos do grid layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanhos iguais */
+    grid-gap: 20px; /* Espaçamento entre as imagens */
+    padding: 20px;
+}
+
+/* Estilos dos itens do grid */
+.grid-item {
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px; /* Altura fixa para uniformizar o tamanho */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 10px;
+}
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 coluna em smartphones */
+    }
+
+    .grid-item {
+        height: 200px; /* Altura ajustada para telas pequenas */
+    }
+}
+
+/* Estilos para o lightbox */
+.lightbox {
+    display: none; /* O lightbox fica oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+/* Botões de navegação (setas) */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Efeito hover para as setas */
+.prev:hover, .next:hover {
+    color: #ccc;
+}
+
+
+/* Seção de Eventos */
+.evento {
+    padding: 50px;
+    background: #9e0606;
+    text-align: center;
+    color: #fff;
+}
+
+.evento h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os cards de evento - 3 colunas e 2 fileiras */
+.evento-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    grid-gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center;
+}
+
+.evento-card {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.evento-card:hover {
+    transform: translateY(-5px);
+}
+
+.evento-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.evento-card p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Estilização da imagem dentro do card */
+.evento-card img {
+    width: 100%;
+    height: 300px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilos responsivos */
+
+/* Em tablets (largura máxima de 768px), 2 colunas */
+@media (max-width: 768px) {
+    .evento-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    }
+}
+
+/* Em smartphones (largura máxima de 480px), 1 coluna */
+@media (max-width: 480px) {
+    .evento-cards {
+        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+    }
+
+    /* Ajuste no padding do card para caber bem em telas pequenas */
+    .evento-card {
+        padding: 15px;
+    }
+}
+
+/* imagem da onda */
+
+.imagem-onda {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.imagem-onda img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: scaleY(0.5); /* Achata a imagem no eixo Y */
+    transform-origin: top; /* A escala começa a partir do topo */
+}
+
+/* Localização e Contato */
+.contato {
+    padding: 50px;
+    background: #9e0606;
+    color: white;
+    text-align: center;
+    margin-top: -80px; /* Ajuste o valor conforme necessário */
+}
+
+.contato h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.contato p {
+    font-size: 1.1rem;
+}
+
+.contato a {
+    color: #4CAF50; /* Cor verde para o link */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: bold; /* Torna o link em negrito */
+}
+
+/* Estilo para quando o usuário passar o mouse sobre o link */
+.contato a:hover {
+    color: #388E3C; /* Cor mais escura ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+
+.map {
+    margin-top: 30px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+/* Estilos para as redes sociais */
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaço entre os ícones */
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    background: #fff; /* Mudar para branco no hover */
+    color: #333; /* Cor do ícone quando hover */
+}
+
+.social-icons i {
+    vertical-align: middle; /* Centraliza o ícone no quadrado */
+}
+
+/* Estilos para os novos links no rodapé */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0; /* Espaçamento entre os links e as redes sociais */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #fff; /* Cor do texto branco */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #9e0606; /* Cor vermelha ao passar o mouse */
+}
