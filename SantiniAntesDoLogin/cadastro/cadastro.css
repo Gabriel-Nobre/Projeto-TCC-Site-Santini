@@ -1,0 +1,64 @@
+/* Custom styles for the login page */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .gradient-custom {
+      /* fallback for old browsers */
+      background: #ff0000;
+      
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, rgb(235, 11, 11), rgb(226, 26, 26));
+      
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgb(182, 5, 5), rgb(209, 55, 55));
+      height: 100vh; /* Garante que a seção ocupe 100% da altura da tela */
+  }
+
+  /* Botão de Voltar no canto superior esquerdo */
+.back-button {
+  position: absolute;
+  top: 20px; /* Distância do topo */
+  left: 20px; /* Distância da esquerda */
+}
+
+.back-button a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.back-button a i {
+  margin-right: 8px; /* Espaço entre a seta e o texto */
+}
+
+.back-button a:hover {
+  color: #b30a0a; /* Muda a cor ao passar o mouse */
+}
+  
+  @media (min-width: 768px) {
+    .gradient-form {
+      height: 100vh !important;
+    }
+  }
+  @media (min-width: 769px) {
+    .gradient-custom-2 {
+      border-top-right-radius: .3rem;
+      border-bottom-right-radius: .3rem;
+    }
+  }
+  .rounded-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; /* Mantém a proporção da imagem e preenche o container */
+  }
